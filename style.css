@@ -161,7 +161,7 @@ body > div {
 
 body {
 	background-color: #fff;
-	color: #031b4e;
+	color: #111;
 	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	font-size: 18px;
 	font-size: 1.8rem;
@@ -230,7 +230,7 @@ i {
 
 mark {
 	background: #ddd;
-	color: #031b4e;
+	color: #111;
 }
 
 blockquote {
@@ -404,7 +404,7 @@ select,
 textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
-	color: #031b4e;
+	color: #111;
 	font-size: 18px;
 	font-size: 1.8rem;
 	font-weight: 400;
@@ -425,12 +425,12 @@ input[type="radio"] {
 }
 
 ::-moz-placeholder {
-	color: #031b4e;
+	color: rgba(255, 255, 255, 0.87);
 	opacity: 1;
 }
 
 ::-webkit-input-placeholder {
-	color: #031b4e;
+	color: rgba(255, 255, 255, 0.87);
 }
 
 button,
@@ -438,8 +438,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #0073e5;
-	border-radius: 3px;
+	background-color: #0abfdc;
+	border-radius: 999px;
 	border: 0;
 	color: #fff;
 	cursor: pointer;
@@ -560,7 +560,7 @@ th:first-child {
 	background: #fff;
 	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
 	clip: auto !important;
-	color: #031b4e;
+	color: #111;
 	display: block;
 	font-size: 1em;
 	font-weight: bold;
@@ -649,13 +649,8 @@ th:first-child {
 }
 
 .after-entry {
-	background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
-	background-repeat: no-repeat;
-	background-size: cover;
-	box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+	background: #f0f0f0;
 	padding: 20px 30px;
-	border-radius: 8px;
-	color: #fff;
 }
 
 .after-entry .widget:last-of-type {
@@ -716,13 +711,13 @@ th:first-child {
 
 .entry-title a,
 .sidebar .widget-title a {
-	color: #031b4e;
+	color: #111;
 	text-decoration: none;
 }
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: #0073e5;
+	color: #0abfdc;
 }
 
 .widget-title {
@@ -775,7 +770,6 @@ img.centered,
 img.alignnone,
 .alignnone {
 	margin-bottom: 15px;
-	box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
 }
 
 a.alignleft,
@@ -919,7 +913,7 @@ img.alignright,
 .gs-faq__question {
 	background: transparent;
 	border-bottom: 1px solid #eee;
-	color: #031b4e;
+	color: #111;
 	font-size: 16px;
 	font-size: 1.6rem;
 	padding-left: 0;
@@ -929,7 +923,7 @@ img.alignright,
 .gs-faq__question:focus,
 .gs-faq__question:hover {
 	background: transparent;
-	color: #0073e5;
+	color: #0abfdc;
 }
 
 .gs-faq__question::after {
@@ -972,7 +966,7 @@ img.alignright,
 
 /* Display outline on focus */
 :focus {
-	color: #031b4e;
+	color: #111;
 	outline: #ccc solid 1px;
 }
 
@@ -981,8 +975,7 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
-	box-shadow: 0 0 20px rgba(0,0,0,0.05);
+	background-color: #000;
 	padding: 0 30px;
 	position: fixed;
 	width: 100%;
@@ -1016,7 +1009,7 @@ img.alignright,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #0073e5;
+	color: rgba(255, 255, 255, 0.87);
 	text-decoration: none;
 }
 
@@ -1048,7 +1041,7 @@ img.alignright,
 }
 
 .genesis-nav-menu a {
-	color: #031b4e;
+	color: rgba(255, 255, 255, 0.87);
 	display: block;
 	font-size: 15px;
 	font-size: 1.5rem;
@@ -1064,7 +1057,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #0073e5;
+	color: #0abfdc;
 	text-decoration: none;
 }
 
@@ -1085,7 +1078,7 @@ img.alignright,
 }
 
 .genesis-nav-menu .sub-menu a {
-	background-color: #fff;
+	background-color: #000;
 	font-size: 14px;
 	font-size: 1.4rem;
 	position: relative;
@@ -1130,7 +1123,7 @@ display: none; /* Fix with JS */
 .sub-menu-toggle {
 	background-color: transparent;
 	border-width: 0;
-	color: #031b4e;
+	color: rgba(255, 255, 255, 0.87);
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
@@ -1144,7 +1137,7 @@ display: none; /* Fix with JS */
 .sub-menu-toggle:hover {
 	background-color: transparent;
 	border-width: 0;
-	color: #0073e5;
+	color: #fff;
 	box-shadow: none;
 	transform: none;
 }
@@ -1439,41 +1432,16 @@ p.entry-meta {
 	margin-bottom: 20px;
 }
 
-.sidebar .widget-first {
-	background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
-	background-repeat: no-repeat;
-	background-size: cover;
-	box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
-	color: #fff;
-	padding: 20px;
-	border-radius: 8px;
-}
-
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background-color: #010e28;
-	color: hsla(0,0%,100%,.5);
+	background-color: #f0f0f0;
 	clear: both;
 	font-size: 16px;
 	font-size: 1.6rem;
 	padding: 60px 0;
-}
-
-.footer-widgets a {
-	color: hsla(0,0%,100%,.5);
-	text-decoration: none;
-}
-
-.footer-widgets a:hover {
-	color: #fff;
-	text-decoration: none;
-}
-
-.footer-widgets .widget-title {
-	color: #fff;
 }
 
 .footer-widgets .wrap {
@@ -1497,8 +1465,8 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #010e28;
-	color: hsla(0,0%,100%,.5);
+	background-color: #000;
+	color: rgba(255, 255, 255, 0.87);
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.5;
@@ -1511,7 +1479,8 @@ p.entry-meta {
 }
 
 .site-footer a {
-	color: hsla(0,0%,100%,.5);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+	color: rgba(255, 255, 255, 0.87);
 	text-decoration: none;
 }
 .site-footer a:hover {
@@ -1551,6 +1520,8 @@ p.entry-meta {
 .js .header-search-wrap .search-form,
 .js .header-search-wrap input[type="search"] {
     height: 100%;
+		background: #000;
+		color: rgba(255, 255, 255, 0.87);
 }
 
 .search-visible .header-search-wrap {
@@ -1607,6 +1578,7 @@ p.entry-meta {
     font-size: 1.2rem;
     -webkit-transform: scale(2);
     transform: scale(2);
+		color: rgba(255, 255, 255, 0.87);
 }
 
 .toggle-header-search.close .ionicons {
@@ -1615,10 +1587,11 @@ p.entry-meta {
     right: 0;
     -webkit-transform: scale(3);
     transform: scale(3);
+		color: rgba(255, 255, 255, 0.87);
 }
 
 .toggle-header-search {
-	color: #031b4e;
+	color: #111;
     position: absolute;
     right: 5px;
     top: 20px;
@@ -1640,65 +1613,11 @@ p.entry-meta {
 }
 
 .entry-image-link img {
-  box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
 	margin-bottom: 30px;
 }
 
 .entry-content img {
 	margin-bottom: 20px;
-}
-
-.gs-faq__question,
-.gs-faq__question:hover,
-.gs-faq__question:active,
-.gs-faq__question:focus {
-	box-shadow: none;
-	transform: none;
-}
-
-/* Pricing Page
---------------------------------------------- */
-
-/* Style the list */
-.pricing-table ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-/* Pricing header */
-
-.price .grey {
-	padding-bottom: 40px;
-	color: #777;
-}
-
-
-.price .header {
-    font-size: 22px;
-		font-size: 2.2rem;
-		font-weight: 600;
-		padding-top: 30px;
-}
-
-/* List items */
-.pricing-table ul > li {
-		list-style-type: none;
-		font-size: 16px;
-		font-size: 1.6rem;
-}
-
-.price .pay {
-	padding: 40px 0;
-
-}
-
-.pricing-table p {
-	font-size: 14px;
-	font-size: 1.4rem;
-	padding: 20px;
 }
 
 /* Media Queries (start desktop)
@@ -1723,7 +1642,7 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu > .menu-highlight > a {
-		background-color: #031b4e;
+		background-color: #111;
 		border-radius: 3px;
 		color: #fff;
 		font-weight: 600;
@@ -1734,7 +1653,7 @@ p.entry-meta {
 
 	.genesis-nav-menu > .menu-highlight > a:hover,
 	.genesis-nav-menu > .menu-highlight > a:focus {
-		background-color: #0073e5;
+		background-color: #0abfdc;
 	}
 
 	.genesis-responsive-menu .sub-menu,
@@ -1743,7 +1662,6 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu .sub-menu {
-		border-top: 1px solid #eee;
 		opacity: 0;
 		padding-left: 0;
 		position: absolute;
@@ -1751,7 +1669,6 @@ p.entry-meta {
 	}
 
 	.genesis-nav-menu .sub-menu a {
-		border: 1px solid #eee;
 		border-top: 0;
 		padding-bottom: 15px;
 		padding-top: 15px;
@@ -1851,13 +1768,7 @@ p.entry-meta {
 
 	.after-entry {
 		padding: 40px 60px;
-		background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
-		background-repeat: no-repeat;
-		background-size: cover;
-		box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
-		color: #fff;
-		border-radius: 8px;
-
+		background-color: #f0f0f0;
 	}
 
 	.after-entry .enews {
@@ -1985,39 +1896,10 @@ p.entry-meta {
 	}
 
 
-/* Pricing Page desktop
---------------------------------------------- */
-
-.pricing-table {
-	background-color: #f4f3f9;
-	clear: both;
-	overflow: hidden;
-	border-radius: 4px;
-	box-shadow: 0 8px 32px rgba(0,0,0,.1), 0 2px 8px rgba(0,0,0,.1);
-	text-align: center;
-}
-
-.pricing-table .one-fourth {
-	border-left: 1px solid #eee;
-	width: 25%;
-	margin-left: 0;
-}
-
-.pricing-table .one-fourth.first {
-	border-left: none;
-}
-
-/* List items */
-.pricing-table ul > li {
-    padding: 5px;
-    text-align: center;
-}
-
 /* Custom Styles for desktop
 --------------------------- */
 .landing-page .entry-title,
-.landing-page h2,
-.landing-page .intro {
+.landing-page h2 {
 	text-align: center;
 }
 
@@ -2034,7 +1916,6 @@ p.entry-meta {
     margin-right: calc(25% - 25vw);
     width: auto;
     max-width: 1000%;
-		box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
 		margin-bottom: 30px;
   }
 
@@ -2071,7 +1952,7 @@ p.entry-meta {
 	*::after {
 		background: transparent !important;
 		box-shadow: none !important;
-		color: #031b4e !important;
+		color: #111 !important;
 		text-shadow: none !important;
 	}
 

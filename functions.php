@@ -182,10 +182,15 @@ unregister_sidebar( 'header-right' );
 // Removes secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
 
-// Removes 3-col site layouts.
+// Force full width content layout.
+add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
+
+// Removes 2,3-col site layouts.
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar' );
 
 // Removes output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
@@ -283,121 +288,12 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
-// Register front-page widget areas
-for ( $i = 1; $i <= 5; $i++ ) {
-	genesis_register_widget_area(
-		array(
-			'id'          => "front-page-{$i}",
-			'name'        => __( "Front Page {$i}", 'genesis-sample' ),
-			'description' => __( "This is the front page {$i} section.", 'genesis-sample' ),
-		)
-	);
-}
 
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
 
-/**
- * Add "first" and "last" CSS classes to dynamic sidebar widgets. Also adds numeric index class for each widget (widget-1, widget-2, etc.)
- */
- function widget_first_last_classes( $params ) {
-
-		global $my_widget_num; // Global a counter array
-		$this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
-		$arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets
-
-		if( !$my_widget_num ) {// If the counter array doesn't exist, create it
-			$my_widget_num = array();
-		}
-
-		// if( !isset( $arr_registered_widgets[$this_id] ) || !is_array( $arr_registered_widgets[$this_id] ) ) { // Check if the current sidebar has no widgets
-			// return $params; // No widgets in this sidebar... bail early.
-		// }
-
-		if( isset( $my_widget_num[$this_id] ) ) { // See if the counter array has an entry for this sidebar
-			$my_widget_num[$this_id] ++;
-		} else { // If not, create it starting with 1
-			$my_widget_num[$this_id] = 1;
-		}
-
-		$class = 'class="widget-' . $my_widget_num[$this_id] . ' '; // Add a widget number class for additional styling options
-
-		if( $my_widget_num[$this_id] == 1 ) { // If this is the first widget
-			$class .= 'widget-first ';
-		} elseif( $my_widget_num[$this_id] == count( $arr_registered_widgets[$this_id] ) ) { // If this is the last widget
-			$class .= 'widget-last ';
-		}
-
-		// $params[0]['before_widget'] = str_replace( 'class="', $class, $params[0]['before_widget'] ); // Insert our new classes into "before widget"
-		$params[0]['before_widget'] = preg_replace('/class=\"/', "$class", $params[0]['before_widget'], 1); // Insert our new classes into "before widget"
-
-		return $params;
-
-	}
-	add_filter( 'dynamic_sidebar_params', 'widget_first_last_classes' );
-
-	add_filter( 'get_the_content_more_link', 'button_read_more_link' );
-	function button_read_more_link() {
-	return '<p><a class="button secondary" href="' . get_permalink() . '">Read more</a></p>';
-	}
-
-// Setup widget counts.
-function masa_count_widgets( $id ) {
-
-	$sidebars_widgets = wp_get_sidebars_widgets();
-
-	if ( isset( $sidebars_widgets[ $id ] ) ) {
-		return count( $sidebars_widgets[ $id ] );
-	}
-
-}
-
-// Calculate widget count.
-function masa_widget_area_class( $id ) {
-
-	$count = masa_count_widgets( $id );
-
-	$class = '';
-
-	if ( $count == 1 ) {
-		$class .= ' widget-full';
-	} elseif ( $count % 3 == 1 ) {
-		$class .= ' widget-thirds';
-	} elseif ( $count % 4 == 1 ) {
-		$class .= ' widget-fourths';
-	} elseif ( $count % 2 == 0 ) {
-		$class .= ' widget-halves uneven';
-	} else {
-		$class .= ' widget-halves';
-	}
-
-	return $class;
-
-}
 // Add single post navigation.
 add_action( 'genesis_entry_footer', 'genesis_prev_next_post_nav' );
-
-// Register shop sidebar widget area.
-genesis_register_sidebar( array(
-	'id'          => 'shop-sidebar',
-	'name'        => __( 'Shop Sidebar', 'genesis-sample' ),
-	'description' => __( 'This is the shop sidebar widget area if you are using a two column site layout option for your product archive.', 'genesis-sample' ),
-) );
-
-/**
- * Display shop sidebar widget area.
- */
-function sp_shop_widget_area() {
-
-	if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
-
-		genesis_widget_area( 'shop-sidebar', array(
-		    'before' => '<div class="shop-sidebar">',
-		    'after'  => '</div>',
-		) );
-	}
-}
-add_action( 'genesis_before_sidebar_widget_area', 'sp_shop_widget_area' );
 
 add_action( 'genesis_header', 'custom_get_header_search_toggle' );
 /**
@@ -425,14 +321,6 @@ function custom_do_header_search_form() {
         get_search_form( false ),
         $button
     );
-}
-
-// Change posts per page in a specific category
-add_action( 'pre_get_posts', 'mp_design_cat_posts_per_page' );
-function mp_design_cat_posts_per_page( $query ) {
-	if( $query->is_main_query() && is_category( 'tutoriale-video-wordpress' ) && ! is_admin() ) {
-		$query->set( 'posts_per_page', '12' );
-	}
 }
 
 add_filter( 'gca_load_column_styles', '__return_false' );

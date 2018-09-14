@@ -1,10 +1,11 @@
-# Masa Theme Changelog
+# Toki Theme Changelog
 
-## [2.6.3] - 2018-09-11
+## [2.6.3] - 2018-09-15
 
 * move nav back to right
 * remove prism.CSS
 * remove comments link
+* removed a lot of stuff, made it as simple as possible
 
 
 ## [2.6.2] - 2018-05-31
