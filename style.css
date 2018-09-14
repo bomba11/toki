@@ -182,14 +182,14 @@ textarea:focus,
 }
 
 a {
-	color: #0073e5;
-	text-decoration: underline;
+	color: #03a87c;
+	text-decoration: none;
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 a:focus,
 a:hover {
-	color: #031b4e;
+	color: #03a87c;
 	text-decoration: none;
 }
 
@@ -438,7 +438,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #0abfdc;
+	background-color: #03a87c;
 	border-radius: 999px;
 	border: 0;
 	color: #fff;
@@ -717,7 +717,7 @@ th:first-child {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: #0abfdc;
+	color: #03a87c;
 }
 
 .widget-title {
@@ -923,7 +923,7 @@ img.alignright,
 .gs-faq__question:focus,
 .gs-faq__question:hover {
 	background: transparent;
-	color: #0abfdc;
+	color: #03a87c;
 }
 
 .gs-faq__question::after {
@@ -1057,7 +1057,7 @@ img.alignright,
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #0abfdc;
+	color: #03a87c;
 	text-decoration: none;
 }
 
@@ -1238,6 +1238,18 @@ display: none; /* Fix with JS */
 
 .entry {
 	margin-bottom: 40px;
+}
+
+.entry-content a {
+	border-bottom: 1px solid rgba(0, 0, 0, 1);
+	color: rgba(0, 0, 0, 1);
+	text-decoration: none;
+}
+
+.entry-content a:hover {
+	border-bottom: 1px solid rgba(0, 0, 0, .4);
+	color: rgba(0, 0, 0, .4);
+	text-decoration: none;
 }
 
 .entry-content ol,
@@ -1653,7 +1665,7 @@ p.entry-meta {
 
 	.genesis-nav-menu > .menu-highlight > a:hover,
 	.genesis-nav-menu > .menu-highlight > a:focus {
-		background-color: #0abfdc;
+		background-color: #03a87c;
 	}
 
 	.genesis-responsive-menu .sub-menu,
