@@ -162,7 +162,7 @@ body > div {
 body {
 	background-color: #fff;
 	color: #111;
-	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-family: "Noto Serif",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	font-size: 18px;
 	font-size: 1.8rem;
 	font-weight: 400;
@@ -257,7 +257,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-family: "Noto Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	font-weight: 700;
 	line-height: 1.2;
 	margin: 0 0 20px;
@@ -1321,8 +1321,8 @@ p.entry-meta {
   padding-bottom: 20px;
 }
 
-.pagination-previous,
-.pagination-next {
+.adjacent-entry-pagination .pagination-previous,
+.adjacent-entry-pagination .pagination-next {
 	padding-bottom: 20px;
 	display: inline-block;
 	float: left;
@@ -1940,12 +1940,12 @@ p.entry-meta {
 	/* Pagination
 	--------------------------- */
 
-	.pagination-previous,
-	.pagination-next {
+.adjacent-entry-pagination .pagination-previous,
+.adjacent-entry-pagination .pagination-next {
 	  width: 49%;
 	}
 
-	.pagination-next {
+.pagination-next {
 		text-align: right;
 	  float: right;
 	}

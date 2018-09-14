@@ -60,6 +60,13 @@ add_action( 'wp_enqueue_scripts', 'genesis_sample_enqueue_scripts_styles' );
 function genesis_sample_enqueue_scripts_styles() {
 
 	wp_enqueue_style(
+			'toki-fonts',
+			'//fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,400i,700,700i',
+			array(),
+			CHILD_THEME_VERSION
+		);
+
+	wp_enqueue_style(
     'ionicons',
 		get_stylesheet_directory_uri() . "/ionicons.css",
     array(),
