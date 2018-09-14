@@ -1,11 +1,11 @@
 /*
-	Theme Name: Toki
-	Theme URI: https://demo.fasterwp.com/toki
-	Description: toki is built on top of the sample theme created for the Genesis Framework.
-	Author: Andrei Chira
-	Author URI: https://simplenet.io/
+	Theme Name: Masa
+	Theme URI: https://demo.fasterwp.com/masa
+	Description: Masa is built on top of the sample theme created for the Genesis Framework.
+	Author: StudioPress & Andrei Chira
+	Author URI: https://fasterwp.com/
 
-	Version: 2.6.2.1
+	Version: 2.6.3
 
 	Tags: one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
@@ -464,7 +464,6 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: #0073e5;
 	color: #fff;
 	box-shadow:0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08);
 	transform:translateY(-1px);
@@ -479,8 +478,8 @@ button.secondary,
 input[type="button"].secondary,
 input[type="reset"].secondary,
 input[type="submit"].secondary {
-	background-color: #d6e9ff;
-  color: #3880ff;
+	background-color: #1cafc6;
+  color: #fff;
 }
 
 .site-container button:disabled,
@@ -650,7 +649,7 @@ th:first-child {
 }
 
 .after-entry {
-	background: linear-gradient(60deg,#3d7afd 0,#4c6df9 50%,#4a68ef 50%,#5b5ef4 100%);
+	background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
@@ -712,12 +711,6 @@ th:first-child {
 	font-size: 20px;
 	font-size: 2rem;
 	font-weight: 600;
-	margin-bottom: 10px;
-}
-
-.entry-title {
-	font-size: 30px;
-	font-size: 3rem;
 	margin-bottom: 10px;
 }
 
@@ -857,16 +850,6 @@ img.alignright,
 .widget_calendar td,
 .widget_calendar th {
 	text-align: center;
-}
-
-.widget .button.secondary {
-  background-color: #fff;
-}
-
-.widget .button.secondary:hover {
-  background-color: #fff;
-  transform:translateY(-1px);
-	box-shadow:0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08)
 }
 
 /* Featured Content
@@ -1329,10 +1312,21 @@ p.entry-meta {
 .pagination {
 	clear: both;
 	margin: 60px 0;
+	border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
 
-.pagination-previous {
+.pagination-previous,
+.pagination-next {
 	padding-bottom: 20px;
+	display: inline-block;
+	float: left;
+	width: 100%;
+	vertical-align: top;
+}
+
+.pagination-next {
+	text-align: left;
 }
 
 .archive-pagination li {
@@ -1446,7 +1440,7 @@ p.entry-meta {
 }
 
 .sidebar .widget-first {
-	background: linear-gradient(60deg,#3d7afd 0,#4c6df9 60%,#4a68ef 50%,#5b5ef4 100%);
+	background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
@@ -1650,6 +1644,10 @@ p.entry-meta {
 	margin-bottom: 30px;
 }
 
+.entry-content img {
+	margin-bottom: 20px;
+}
+
 .gs-faq__question,
 .gs-faq__question:hover,
 .gs-faq__question:active,
@@ -1814,7 +1812,7 @@ p.entry-meta {
 		width: 65%;
 	}
 
-	.full-width-content .content {
+	.landing-page .content  {
     float: none;
     width: 100%;
 }
@@ -1822,8 +1820,7 @@ p.entry-meta {
 		float: right;
 	}
 
-	.full-width-content .content,
-	.landing-page .content {
+	.full-width-content .content {
 		float: none;
 		margin-left: auto;
 		margin-right: auto;
@@ -1854,7 +1851,7 @@ p.entry-meta {
 
 	.after-entry {
 		padding: 40px 60px;
-		background: linear-gradient(60deg,#3d7afd 0,#4c6df9 60%,#4a68ef 50%,#5b5ef4 100%);
+		background: url(./images/one.svg),radial-gradient(ellipse at bottom right,#1cafc6,#012690);
 		background-repeat: no-repeat;
 		background-size: cover;
 		box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
@@ -1950,86 +1947,49 @@ p.entry-meta {
 		width: calc(100% / 3);
 	}
 
-	/* Center Navigation
-	---------------------------------------------------------------------------------------------------- */
+	/* Header Search
+	--------------------------------------------- */
 
-	@supports (grid-area: auto) {
-    .site-header > .wrap {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        justify-items: center;
-    }
+	.site-header > .wrap {
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: justify;
+	        -ms-flex-pack: justify;
+	            justify-content: space-between;
+	    -webkit-box-align: center;
+	        -ms-flex-align: center;
+	            align-items: center;
+	    position: relative;
+	}
 
-    .title-area {
-        float: none;
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-        justify-self: start;
-    }
+	.title-area,
+	.nav-primary {
+	    float: none;
+	}
 
-    .nav-primary {
-        float: none;
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-    }
-}
-.site-header > .wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
-}
+	.nav-primary {
+	    -webkit-box-flex: 1;
+	        -ms-flex: 1;
+	            flex: 1;
+	    text-align: right;
+			margin-right: 40px;
+	}
 
-.title-area {
-    float: none;
-    position: absolute;
-    left: 0;
-}
+	.toggle-header-search {
+	    position: absolute;
+	    display: block;
+	    padding: 6px 0 15px;
+	    line-height: 1;
+	    margin-left: 20px;
+	}
 
-/* Header Search
---------------------------------------------- */
-
-.site-header > .wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-}
-
-.title-area,
-.nav-primary {
-    float: none;
-}
-
-/*.nav-primary {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    text-align: right;
-		margin-right: 60px;
-}*/
-
-.toggle-header-search {
-    position: absolute;
-    display: block;
-    padding: 6px 0 15px;
-    line-height: 1;
-    margin-left: 20px;
-}
 
 /* Pricing Page desktop
 --------------------------------------------- */
 
 .pricing-table {
+	background-color: #f4f3f9;
 	clear: both;
 	overflow: hidden;
 	border-radius: 4px;
@@ -2055,11 +2015,47 @@ p.entry-meta {
 
 /* Custom Styles for desktop
 --------------------------- */
-.full-width-content .entry-title,
-.full-width-content h2,
-.full-width-content .intro {
+.landing-page .entry-title,
+.landing-page h2,
+.landing-page .intro {
 	text-align: center;
 }
+
+.entry-content .alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: auto;
+    max-width: 1000%;
+		margin-bottom: 30px;
+  }
+
+.entry-content .alignwide {
+    margin-left: calc(25% - 25vw);
+    margin-right: calc(25% - 25vw);
+    width: auto;
+    max-width: 1000%;
+		box-shadow: 0 6px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.08);
+		margin-bottom: 30px;
+  }
+
+  .alignwide img,
+  .alignfull img {
+    display: block;
+    margin: 0 auto;
+  }
+
+	/* Pagination
+	--------------------------- */
+
+	.pagination-previous,
+	.pagination-next {
+	  width: 49%;
+	}
+
+	.pagination-next {
+		text-align: right;
+	  float: right;
+	}
 
 }
 
