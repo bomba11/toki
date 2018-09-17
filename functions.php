@@ -347,3 +347,11 @@ add_action( 'genesis_before_loop', function () {
 		'after'		=> '</div></div>',
 	) );
 } );
+
+// Remove dashicons in frontend for unauthenticated users
+add_action( 'wp_enqueue_scripts', 'toki_dequeue_dashicons' );
+function toki_dequeue_dashicons() {
+	if ( ! is_user_logged_in() ) {
+		wp_deregister_style( 'dashicons' );
+	}
+}
