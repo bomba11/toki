@@ -1075,6 +1075,7 @@ img.alignright,
 	padding-left: 15px;
 	position: static;
 	z-index: 99;
+	text-align: left;
 }
 
 .genesis-nav-menu .sub-menu a {

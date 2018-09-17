@@ -1,23 +1,22 @@
 <?php
 /**
- * @author  Brad Dalton
- * @link    http://wpsites.net/web-design/list-titles-only-on-search-results-page/
+ * This file adds a custom archive page to any Genesis child theme.
+ *
+ * @author    Brad Dalton
+ * @example   http://wpsites.net/web-design/how-to-show-only-titles-on-archive-pages-in-genesis/
+ * @copyright 2014 WP Sites
  */
 
-//* Remove breadcrumbs
+//* Remove the breadcrumb navigation
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-
-//* Remove the post meta function
-//remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
-
-//* Remove the post info function
-remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-
-//* Remove the post image (requires HTML5 theme support)
-remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 
 //* Remove the post content
 remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 
+//* Remove the post image
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+
+//* Remove the post meta function
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 genesis();
