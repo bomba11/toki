@@ -98,9 +98,9 @@ function genesis_sample_enqueue_scripts_styles() {
 function genesis_sample_responsive_menu_settings() {
 
 	$settings = array(
-		'mainMenu'         => __( 'Menu', 'genesis-sample' ),
+		'mainMenu'         => '<span></span>',
 		'menuIconClass'    => 'ionicons-before ion-navicon',
-		'subMenu'          => __( 'Submenu', 'genesis-sample' ),
+		'subMenu'          => '<span></span>',
 		'subMenuIconClass' => 'ionicons-before ion-ios-arrow-down',
 		'menuClasses'      => array(
 			'combine' => array(
@@ -324,3 +324,26 @@ function custom_do_header_search_form() {
 }
 
 add_filter( 'gca_load_column_styles', '__return_false' );
+
+/* Register Welcome widget area */
+
+genesis_register_widget_area(
+	array(
+		'id'          => 'welcome',
+		'name'        => __( 'Welcome', 'genesis-sample' ),
+		'description' => __( 'Welcome section below header', 'genesis-sample' ),
+	)
+);
+
+// Display Welcome widget area below header
+add_action( 'genesis_before_loop', function () {
+	// only on front page
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	genesis_widget_area( 'welcome', array(
+		'before'	=> '<div class="welcome widget-area"><div class="wrap">',
+		'after'		=> '</div></div>',
+	) );
+} );
